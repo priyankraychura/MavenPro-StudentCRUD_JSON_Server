@@ -1,0 +1,46 @@
+{
+  "students": [
+    {
+      "id": "1750245431921",
+      "name": "Priyank Raychura",
+      "class": "BCA",
+      "grno": "132456",
+      "rollno": "2"
+    },
+    {
+      "id": "1750245463781",
+      "name": "Mohan",
+      "class": "BBA",
+      "grno": "852741",
+      "rollno": "3"
+    },
+    {
+      "id": "1750246898871",
+      "name": "Chaman",
+      "class": "MCA",
+      "grno": "741852",
+      "rollno": "5"
+    },
+    {
+      "id": "1750247059456",
+      "name": "Vitthaldas",
+      "class": "MMA",
+      "grno": "111555",
+      "rollno": "7"
+    },
+    {
+      "id": "1750247519416",
+      "name": "Chaman",
+      "class": "MCA",
+      "grno": "741852",
+      "rollno": "8"
+    },
+    {
+      "id": "1750249402859",
+      "name": "Mohan",
+      "class": "BBA",
+      "grno": "852741",
+      "rollno": "9"
+    }
+  ]
+}
