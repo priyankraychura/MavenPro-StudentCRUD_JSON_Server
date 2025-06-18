@@ -8,13 +8,13 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
     const location = useLocation();
-    const isEditing = location?.pathname?.startsWith('/add-student-data/') && location?.pathname?.split('/')?.length === 3;
+    const isEditing = /^\/add-student-data\/\d+$/.test(location.pathname);
 
     console.log(isEditing);
-    
+
     const navLinks = [
         { label: "Home", to: "/" },
-        { label: isEditing ? "Update Student" : "Add Student", to: "/add-student-data" },
+        { label: isEditing ? "Update Student" : "Add Student", to: "/add-student-data/" },
     ];
 
     return (

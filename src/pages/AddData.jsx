@@ -37,6 +37,30 @@ const AddData = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        if (!id) {
+            // Clear the form if id is no longer in the URL (i.e., Add Mode)
+            setFormData({
+                id: String(Date.now()),
+                name: '',
+                class: '',
+                grno: '',
+                rollno: ''
+            });
+
+            // Optional: Auto-generate roll number again
+            const maxRollNo = userData?.reduce((max, curr) => {
+                const roll = parseInt(curr?.rollno);
+                return roll > max ? roll : max;
+            }, 0);
+            setFormData((prev) => ({
+                ...prev,
+                rollno: String(maxRollNo + 1),
+            }));
+        }
+    }, [id]);
+
+
+    useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await fetch('http://localhost:3000/students')
@@ -53,6 +77,7 @@ const AddData = () => {
     }, [])
 
     useEffect(() => {
+
         const timeout = setTimeout(() => {
             setLoading(false);
         }, 800); // simulate a short load time (e.g., 800ms)
