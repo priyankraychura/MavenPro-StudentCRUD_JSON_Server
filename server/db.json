@@ -15,13 +15,6 @@
       "rollno": "3"
     },
     {
-      "id": "1750246898871",
-      "name": "Chaman",
-      "class": "MCA",
-      "grno": "741852",
-      "rollno": "5"
-    },
-    {
       "id": "1750247059456",
       "name": "Vitthaldas",
       "class": "MMA",
@@ -30,7 +23,7 @@
     },
     {
       "id": "1750247519416",
-      "name": "Chaman",
+      "name": "Chaman choti",
       "class": "MCA",
       "grno": "741852",
       "rollno": "8"
@@ -41,6 +34,13 @@
       "class": "BBA",
       "grno": "852741",
       "rollno": "9"
+    },
+    {
+      "id": "1750250511835",
+      "name": "Tulsidas",
+      "class": "MBA",
+      "grno": "122255",
+      "rollno": "10"
     }
   ]
 }

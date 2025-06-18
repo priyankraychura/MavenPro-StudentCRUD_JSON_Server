@@ -19,7 +19,6 @@ import showToast from '../servies/toastService';
 import Button from '@mui/material/Button';
 import ClassCard from '../components/ClassCard';
 import Skeleton from '@mui/material/Skeleton';
-import serverService from '../servies/jsonServerService';
 
 const Home = () => {
   document.title = "Dashboard";
@@ -33,12 +32,19 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await serverService.fetchData();
-      setUserData(data);
+      try {
+        const response = await fetch('http://localhost:3000/students')
+        const result = await response.json();
+        setUserData(result);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
     };
 
-    fetchData(); // Call the async function
-  }, []);
+    fetchData();
+  }, [])
 
 
   useEffect(() => {
@@ -232,7 +238,7 @@ const Home = () => {
       </Box>
 
       {loading ? (
-        <Skeleton variant="rounded" height={400} sx={{ maxWidth: '90%', minWidth: '400px' }}/>
+        <Skeleton variant="rounded" height={400} sx={{ maxWidth: '90%', minWidth: '80%' }} />
       ) : (
         <Paper sx={{ height: 400, maxWidth: '90%' }}>
           <DataGrid
